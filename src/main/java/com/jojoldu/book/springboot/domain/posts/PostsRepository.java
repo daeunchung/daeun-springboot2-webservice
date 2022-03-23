@@ -11,7 +11,7 @@ import java.util.List;
 // *** Entity클래스와 기본 Entity Repository는 함께 위치해야함. Entity클래스는 기본 Repository 없이는 제대로 동작X ***
 public interface PostsRepository extends JpaRepository<Posts, Long> {
 
-    // SpringDataJp 에서 제공하지 않는 메소드는 위처럼 쿼리 어노테이션으로 작성 가능
+    // SpringDataJpa 에서 제공하지 않는 메소드는 위처럼 쿼리 어노테이션으로 작성 가능
     @Query("select p from Posts p order by p.id desc")
     List<Posts> findAllDesc();
 }
