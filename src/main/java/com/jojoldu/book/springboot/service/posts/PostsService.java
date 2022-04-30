@@ -50,6 +50,7 @@ public class PostsService {
     public List<PostsListResponseDto> findAllDesc() {
         return postsRepository.findAllDesc().stream()
                 .map(PostsListResponseDto::new)
+                // 윗 줄 코드는 .map(posts-> new PostsListResponseDto(posts) 의 람다식 버전
                 .collect(Collectors.toList());
     }
 
